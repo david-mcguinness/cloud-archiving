@@ -1,0 +1,22 @@
+server:
+  port: 8040
+  spring:
+    application:
+      name: config-server
+    cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/david-mcguinness/cloud-archiving
+            username: david-mcguinness
+            password: 9Clonbullogue
+            basedir: config
+      vault:
+        token: s.ERhkDXl7mxB8UViR8DeOKbjw
+        uri: http://127.0.0.1:8200
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+      preferIpAddress: true
